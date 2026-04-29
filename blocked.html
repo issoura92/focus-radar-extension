@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Focus Radar — رحلة تعلم</title>
+  <link rel="stylesheet" href="blocked.css" />
+</head>
+<body>
+  <div class="bg-orb one"></div><div class="bg-orb two"></div><div class="bg-orb three"></div>
+  <main class="shell">
+    <section class="hero card" id="welcomeView">
+      <div class="topline"><img src="icons/icon128.png" alt="Focus Radar"/><span id="timerBadge">الحظر نشط</span></div>
+      <h1>تم تحويل وقت التشتت إلى وقت تعلّم 🚀</h1>
+      <p>تم حظرك مؤقتًا من <b id="siteName">هذا الموقع</b>. بدل الصفحة الزرقاء، اختر مجالًا وابدأ رحلة قصيرة حتى ينتهي الحظر.</p>
+      <button id="startBtn" class="primary">ابدأ الآن</button>
+    </section>
+
+    <section class="card hidden" id="pathsView">
+      <button class="ghost back" data-go="welcome">← رجوع</button>
+      <h2>اختر مجالًا تريد تطوير نفسك فيه</h2>
+      <p class="muted">كل مسار يحتوي خطوات صغيرة وسريعة، مصممة لتستفيد من وقت الحظر.</p>
+      <div id="pathGrid" class="grid"></div>
+    </section>
+
+    <section class="card hidden" id="trackView">
+      <div class="trackHead">
+        <button class="ghost" data-go="paths">← تغيير المجال</button>
+        <div><span class="chip" id="trackCategory">مسار</span><h2 id="trackTitle">عنوان المسار</h2></div>
+        <span class="flame" id="pointsBadge">🔥 0</span>
+      </div>
+      <div class="progress"><span id="progressFill"></span></div>
+      <p class="muted" id="trackSub"></p>
+      <div id="stepsList" class="steps"></div>
+      <div class="actions"><button id="showLessonBtn" class="primary">ابدأ الدرس الأول</button><button class="secondary" id="backBtn">رجوع</button></div>
+    </section>
+
+    <section class="card hidden" id="lessonView">
+      <div class="lessonTop"><button class="ghost" data-go="track">← المسار</button><span id="lessonCounter">1 / 4</span></div>
+      <h2 id="lessonTitle"></h2>
+      <p id="lessonText" class="lessonText"></p>
+      <div id="lessonBox" class="lessonBox"></div>
+      <div class="tip"><span>💡</span><p id="lessonTip"></p></div>
+      <div class="actions"><button id="prevLesson" class="secondary">السابق</button><button id="completeLesson" class="primary">أكملت الدرس ✅</button></div>
+    </section>
+
+    <section class="card done hidden" id="doneView">
+      <div class="badgeDone">✓</div>
+      <h2>أحسنت!</h2>
+      <p>لقد أكملت خطوة مفيدة بدل إضاعة الوقت. يمكنك متابعة درس آخر أو انتظار انتهاء الحظر.</p>
+      <div class="stats"><div>🔥 <b id="earnedPoints">+10</b><span>نقاط مكتسبة</span></div><div>⏱️ <b id="remainText">--</b><span>متبقي للحظر</span></div></div>
+      <button id="nextLesson" class="primary">الدرس التالي ▶</button>
+      <button id="chooseAnother" class="linkBtn">اختيار مجال آخر</button>
+    </section>
+  </main>
+  <script src="blocked.js"></script>
+</body>
+</html>

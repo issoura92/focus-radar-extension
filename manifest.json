@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Radar - رادار التركيز",
+  "version": "1.1.0",
+  "description": "رادار تركيز ذكي يحسب وقتك على المواقع المشتتة ويحظرها مؤقتًا، ويحوّل وقت الحظر إلى رحلة تعلم مفيدة.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "alarms",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Focus Radar",
+    "default_popup": "popup.html"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "dynamic_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "blocked.js", "blocked.css", "icons/icon128.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
